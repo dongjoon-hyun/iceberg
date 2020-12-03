@@ -37,7 +37,10 @@ jobs:
         path: ~/.gradle/caches
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
         restore-keys: ${{ runner.os }}-gradle
-    - run: ./gradlew check
+    - run: |
+        mvn dependency:get -DgroupId=org.apache.orc -DartifactId=orc-core -Dversion=1.6.6-SNAPSHOT -Dpackaging=jar -D=remoteRepositories=https://repository.apache.org/snapshots
+        mvn dependency:get -DgroupId=org.apache.orc -DartifactId=orc-core -Dversion=1.6.6-SNAPSHOT -Dpackaging=jar -D=remoteRepositories=https://repository.apache.org/snapshots -Dclassifier=nohive
+        ./gradlew check
     - uses: actions/upload-artifact@v2
       if: failure()
       with:
