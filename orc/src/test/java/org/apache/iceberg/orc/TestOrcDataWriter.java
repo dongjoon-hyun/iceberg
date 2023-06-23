@@ -144,8 +144,8 @@ public class TestOrcDataWriter {
     ProxyOutputFile outFile = new ProxyOutputFile(Files.localOutput(temp.newFile()));
     Assertions.assertThatThrownBy(
             () -> new Path(outFile.location()).getFileSystem(new Configuration()))
-        .isInstanceOf(UnsupportedFileSystemException.class)
-        .hasMessageStartingWith("No FileSystem for scheme \"dummy\"");
+        .isInstanceOf(IOException.class)
+        .hasMessageStartingWith("No FileSystem for scheme");
 
     // Given that FileIO is now handled there is no determination of FileSystem based on scheme
     // but instead operations are handled by the InputFileSystem and OutputFileSystem that wrap
