@@ -94,7 +94,6 @@ jobs:
     - run: |
         mvn dependency:get -DgroupId=org.apache.orc -DartifactId=orc-core -Dversion=1.7.10 -Dpackaging=jar -D=remoteRepositories=https://repository.apache.org/content/repositories/orgapacheorc-1075
         mvn dependency:get -DgroupId=org.apache.orc -DartifactId=orc-core -Dversion=1.7.10 -Dpackaging=jar -D=remoteRepositories=https://repository.apache.org/content/repositories/orgapacheorc-1075 -Dclassifier=nohive
-        mvn dependency:get -DgroupId=org.apache.orc -DartifactId=orc-core -Dversion=1.7.10 -Dpackaging=jar -D=remoteRepositories=https://repository.apache.org/content/repositories/orgapacheorc-1075 -Dclassifier=shaded-protobuf
         mvn dependency:get -DgroupId=org.apache.orc -DartifactId=orc-tools -Dversion=1.7.10 -Dpackaging=jar -D=remoteRepositories=https://repository.apache.org/content/repositories/orgapacheorc-1075
     - run: ./gradlew -DallVersions build -x test -x javadoc -x integrationTest
 
@@ -109,5 +108,4 @@ jobs:
     - run: |
         mvn dependency:get -DgroupId=org.apache.orc -DartifactId=orc-core -Dversion=1.7.10 -Dpackaging=jar -D=remoteRepositories=https://repository.apache.org/content/repositories/orgapacheorc-1075
         mvn dependency:get -DgroupId=org.apache.orc -DartifactId=orc-core -Dversion=1.7.10 -Dpackaging=jar -D=remoteRepositories=https://repository.apache.org/content/repositories/orgapacheorc-1075 -Dclassifier=nohive
-        mvn dependency:get -DgroupId=org.apache.orc -DartifactId=orc-core -Dversion=1.7.10 -Dpackaging=jar -D=remoteRepositories=https://repository.apache.org/content/repositories/orgapacheorc-1075 -Dclassifier=shaded-protobuf
     - run: ./gradlew -Pquick=true javadoc
