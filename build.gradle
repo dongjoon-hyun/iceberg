@@ -127,6 +127,12 @@ allprojects {
   repositories {
     mavenCentral()
     mavenLocal()
+    maven {
+        url "https://repository.apache.org/content/repositories/orgapacheorc-1076"
+    }
+    maven {
+        url "https://repository.apache.org/snapshots"
+    }
   }
 }
 
@@ -380,7 +386,9 @@ project(':iceberg-data') {
       exclude group: 'org.slf4j', module: 'slf4j-log4j12'
     }
 
-    implementation("${libs.orc.core.get().module}:${libs.versions.orc.get()}:nohive") {
+    implementation("${libs.orc.format.get().module}:${libs.versions.orc.format.get()}:nohive") {}
+
+    implementation("${libs.orc.core.get().module}:2.0.0-SNAPSHOT:nohive") {
       exclude group: 'org.apache.hadoop'
       exclude group: 'commons-lang'
       // These artifacts are shaded and included in the orc-core fat jar
@@ -741,7 +749,9 @@ project(':iceberg-orc') {
       exclude group: 'org.tukaani' // xz compression is not supported
     }
 
-    implementation("${libs.orc.core.get().module}:${libs.versions.orc.get()}:nohive") {
+    implementation("${libs.orc.format.get().module}:${libs.versions.orc.format.get()}:nohive") {}
+
+    implementation("${libs.orc.core.get().module}:2.0.0-SNAPSHOT:nohive") {
       exclude group: 'org.apache.hadoop'
       exclude group: 'commons-lang'
       // These artifacts are shaded and included in the orc-core fat jar

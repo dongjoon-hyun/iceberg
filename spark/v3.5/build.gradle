@@ -75,7 +75,7 @@ project(":iceberg-spark:iceberg-spark-${sparkMajorVersion}_${scalaVersion}") {
     implementation libs.parquet.column
     implementation libs.parquet.hadoop
 
-    implementation("${libs.orc.core.get().module}:${libs.versions.orc.get()}:nohive") {
+    implementation("${libs.orc.core.get().module}:2.0.0-SNAPSHOT:nohive") {
       exclude group: 'org.apache.hadoop'
       exclude group: 'commons-lang'
       // These artifacts are shaded and included in the orc-core fat jar

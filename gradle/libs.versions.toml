@@ -68,7 +68,8 @@ nessie = "0.76.0"
 netty-buffer = "4.1.97.Final"
 netty-buffer-compat = "4.1.68.Final"
 object-client-bundle = "3.3.2"
-orc = "1.9.2"
+orc = "2.0.0-SNAPSHOT"
+orc-format = "1.0.0"
 parquet = "1.13.1"
 pig = "0.17.0"
 roaringbitmap = "1.0.0"
@@ -155,6 +156,7 @@ netty-buffer = { module = "io.netty:netty-buffer", version.ref = "netty-buffer" 
 netty-buffer-compat = { module = "io.netty:netty-buffer", version.ref = "netty-buffer-compat" }
 object-client-bundle = { module = "com.emc.ecs:object-client-bundle", version.ref = "object-client-bundle" }
 orc-core = { module = "org.apache.orc:orc-core", version.ref = "orc" }
+orc-format = { module = "org.apache.orc:orc-format", version.ref = "orc-format" }
 parquet-avro = { module = "org.apache.parquet:parquet-avro", version.ref = "parquet" }
 parquet-column = { module = "org.apache.parquet:parquet-column", version.ref = "parquet" }
 parquet-hadoop = { module = "org.apache.parquet:parquet-hadoop", version.ref = "parquet" }
